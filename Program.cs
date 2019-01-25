@@ -10,18 +10,20 @@ namespace debugws2
     {
       string[] data = File.ReadAllLines("data");
       long total = 0;
-
+     
       for (int x = 0; x < data.Length; x++)
       {
         total += cnv(data[x]);
+       
       }
-
+     
       return total;
     }
 
-    private int cnv(string val)
+    private long cnv(string val)
     {
-      Int32.TryParse(val, NumberStyles.HexNumber, CultureInfo.InvariantCulture, out int value);
+      long.TryParse(val, NumberStyles.HexNumber, CultureInfo.InvariantCulture, out long value);
+      
 
       return value;
     }
